@@ -1,0 +1,36 @@
+.wp-block-hotel-property-articles {
+    .property-articles-header {
+        text-align: center;
+        .property-term {
+            font-size: 0.6875rem;
+            color: var(--red-500);
+            padding: 8px 50px;
+            background-color: var(--red-100);
+            border-radius: 1rem;
+            letter-spacing: 0.79px;
+        }
+        .property-article__title {
+            font-size: 2rem;
+            color: var(--black-200);
+            letter-spacing: 1.2px;
+            margin: 1rem 0;
+            font-weight: normal;
+        }
+        .property-article__desc {
+            color: var(--gray-500);
+            font-size: 1.0625rem;
+            margin: 0.5rem 0;
+            font-weight: normal;
+            line-height: 27px;
+            letter-spacing: 0.6px;
+        }
+    }
+    .property-articles-container {
+        flex-direction: column;
+        display: grid;
+        gap: var(--gap);
+        margin: 0 0 var(--gap);
+        margin-top: 2.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}

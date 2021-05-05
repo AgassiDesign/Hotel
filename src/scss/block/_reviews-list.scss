@@ -1,0 +1,92 @@
+.wp-block-hotel-reviews {
+    margin: 2.5rem 0;
+
+    .reviews-list__title {
+        font-size: 1.125rem;
+        color: var(--black-200);
+    }
+    .reviews-list {
+        box-shadow: 0px -20px 48px 0px rgb(0 0 0 / 2%);
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 0.625rem;
+        list-style-type: none;
+        color: #1e2022;
+        white-space: pre-wrap;
+        @include breakpoint-up('md') {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 1.5625rem;
+        }
+        .reviews-list__item {
+            align-items: center;
+            display: grid;
+            grid-template-columns: 4fr 1fr 1fr;
+            grid-column-gap: 0.625rem;
+            @include breakpoint-up('md') {
+                grid-column-gap: 1.25rem;
+            }
+            .reviews-item {
+                color: var(--black-200);
+                letter-spacing: 0.49px;
+            }
+            .reviews-progress__bar {
+                border: none;
+                width: 100px;
+                height: 5px;
+                @include breakpoint-up('md') {
+                    width: 150px;
+                }
+            }
+            .reviews-item__value {
+                color: var(--black-600);
+                font-weight: bold;
+            }
+        }
+    }
+    .reviews-area {
+        margin-top: 2.5rem;
+        .reviews-post {
+            list-style-type: none;
+            padding-left: 0;
+            & .review:last-child {
+                border-bottom: unset;
+            }
+            .review {
+                padding-bottom: 1.375rem;
+                margin-bottom: 1.375rem;
+                border-bottom: 1px solid var(--gray-100);
+                .review-body {
+                    .review-meta {
+                        display: grid;
+                        grid-template-columns: 100px 1fr;
+                        .review-avatar {
+                            img {
+                                border-radius: 50%;
+                            }
+                        }
+                        .review-container {
+                            margin-left: 1.25rem;
+                            margin-top: 0.625rem;
+                            .review-metadata {
+                                .fn {
+                                    margin-bottom: 0.3125rem;
+                                    a {
+                                        font-size: 0.875rem;
+                                        color: var(--black-200);
+                                    }
+                                }
+                            }
+                            .review-content {
+                                margin-top: 0.875rem;
+                                font-size: 1.0625rem;
+                                color: var(--gray-500);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.wp-block-number-list-block {
+    border-bottom: 1px solid var(--gray-100);
+    margin-top: 2.5rem;
+    padding-bottom: 1.875rem;
+    .number-list {
+        list-style: none;
+        padding-left: 0;
+        .number-list-item {
+            position: relative;
+            margin-left: 2.375rem;
+            .number-list__marker {
+                color: var(--red-500);
+                display: inline;
+                position: absolute;
+                left: -37px;
+                top: 2px;
+                font-weight: bold;
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    background-color: var(--red-100);
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    left: -11px;
+                    top: -5px;
+                    z-index: -1;
+                }
+            }
+            .list-item__title {
+                font-size: 1.125rem;
+                color: var(--black-200);
+            }
+            .list-item__desc {
+                font-size: 1.0625rem;
+                color: var(--gray-500);
+            }
+        }
+    }
+}

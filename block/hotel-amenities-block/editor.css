@@ -1,0 +1,25 @@
+/**
+ * Note that these styles are loaded *after* common styles, so that
+ * editor-specific styles using the same selectors will take precedence.
+ */
+.wp-block-hotel-amenities-list .amenities-list {
+	display: grid;
+    grid-template-columns: repeat(4, 1fr);
+	list-style-type: none;
+	color: #1E2022;
+}
+
+.amenities-list li::before {
+    content: "";
+    position: relative;
+    left: -0.5em;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.amenities-list li:before {
+    top: 3px;
+    height: 0.9em;
+    width: 0.9em;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' color='%23f45757'><path fill='currentColor' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'></path></svg>");
+}

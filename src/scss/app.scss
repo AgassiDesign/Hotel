@@ -1,0 +1,269 @@
+//*** Normalize.css v8.0.1 ***//
+@import 'normalize';
+
+//*** Variables ***//
+@import 'variables';
+
+//*** Helper ***//
+@import 'helper';
+
+// Header && Footer styles
+@import 'header'; // .site-header
+@import 'footer'; // .site-footer
+@import 'nav'; //.site-navigation
+@import 'pagination'; //.pagination
+@import 'widget'; //.widget
+@import 'article'; //.article
+@import 'single'; //.single
+
+// block style
+@import 'block/number-list'; //.wp-block-number-list
+@import 'block/amenities-list'; //.wp-block-amenities-list-block
+@import 'block/reviews-list'; //.wp-block-reviews-list
+@import 'block/property-articles'; //.wp-block-property-articles
+@import 'block/property-download'; //.wp-block-hotel-download
+@import 'block/reserve-form'; //.wp-block-hotel-reserve-form
+:root {
+    --font-family: #{$font-sans-serif};
+    --font-size-base: #{$font-size-base};
+    --bs-gutter-x: 0.75rem;
+    --gap: 1.875rem;
+    --gray-100: #{map-get($theme-colors, 'gray-100')};
+    --gray-200: #{map-get($theme-colors, 'gray-200')};
+    --gray-300: #{map-get($theme-colors, 'gray-300')};
+    --gray-400: #{map-get($theme-colors, 'gray-400')};
+    --gray-500: #{map-get($theme-colors, 'gray-500')};
+    --red-100: #{map-get($theme-colors, 'red-100')};
+    --red-500: #{map-get($theme-colors, 'red-500')};
+    --black-200: #{map-get($theme-colors, 'black-200')};
+    --black-600: #{map-get($theme-colors, 'black-600')};
+    --blue-200: #{map-get($theme-colors, 'blue-200')};
+
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--gray-500);
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.entry-title {
+    font-size: 2rem;
+    color: var(--black-200);
+
+    @include breakpoint-up('md') {
+        font-size: 2.375rem;
+    }
+}
+
+.site-search {
+    background-color: #f7fafd;
+    min-height: 156px;
+    display: flex;
+    align-items: center;
+
+    .search-form {
+        display: grid;
+        justify-content: center;
+        gap: 1.875rem;
+        align-items: flex-end;
+        padding: 1.875rem 0;
+
+        @include breakpoint-up('md') {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include breakpoint-up('xl') {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .search-form-item {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            .search-label {
+                display: block;
+                text-transform: uppercase;
+                color: var(--gray-400);
+                margin-bottom: 0.3125rem;
+            }
+
+            .input__search {
+                width: 8.75rem;
+                height: 2.5rem;
+            }
+
+            .input__search-large {
+                @extend .input__search;
+                width: 14.6875rem;
+            }
+        }
+    }
+}
+
+.site-search-result {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint-up('md') {
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    .search-toggle-menu {
+        margin-left: 50px;
+        @include breakpoint-up('sm') {
+            margin-left: 0.625rem;
+        }
+        @include breakpoint-up('xl') {
+            display: none;
+        }
+    }
+
+    .search-result-header {
+        border-bottom: 1px solid var(--gray-100);
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        @include breakpoint-up('md') {
+            padding-bottom: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .entry-title {
+            text-align: center;
+            @include breakpoint-up('md') {
+                text-align: left;
+            }
+        }
+
+        .search-result-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include breakpoint-up('md') {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .result-panel-attr {
+                width: 100%;
+                max-width: 14.6875rem;
+                text-align: center;
+                margin-bottom: 1.25rem;
+
+                @include breakpoint-up('md') {
+                    width: initial;
+                    max-width: unset;
+                    text-align: unset;
+                    margin-bottom: 0;
+                }
+
+                .form-select {
+                    margin-bottom: 1.25rem;
+                    @include breakpoint-up('md') {
+                        display: inline-block;
+                        width: initial;
+                        margin-right: 0.625rem;
+                        margin-bottom: 0;
+                    }
+                }
+                .show-count {
+                    margin-bottom: 0.5rem;
+                    @include breakpoint-up('md') {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .result-sorting {
+                    @include breakpoint-up('md') {
+                        margin-right: 0.625rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .search-result-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: var(--gap);
+        margin: 0 auto;
+        column-gap: 1.875rem;
+        position: relative;
+        overflow: hidden;
+        @include breakpoint-up('xl') {
+            overflow: unset;
+        }
+        @include breakpoint-down('xl') {
+            display: block;
+            padding-top: 0;
+        }
+        .result-articles {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap);
+            margin: 0 0 var(--gap);
+            @include breakpoint-up('md') {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        .search-result-filter {
+            padding: 1.5625rem;
+            max-width: 360px;
+            border-radius: 0.25rem;
+            box-shadow: 0px 2px 48px 0px rgb(0 0 0 / 6%);
+            height: min-content;
+            position: absolute;
+            right: -360px;
+            top: 0;
+            background-color: white;
+            z-index: 100;
+            transition: right linear 0.2s;
+            @include breakpoint-up('xl') {
+                position: initial;
+            }
+
+            &.open {
+                right: 0;
+            }
+            .result-filter-close {
+                font-size: 1rem;
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                @include breakpoint-up('xl') {
+                    display: none;
+                }
+            }
+
+            .filter-container {
+                margin-bottom: 1.25rem;
+                padding-bottom: 1.125rem;
+                border-bottom: 1px solid var(--gray-100);
+                .filter-title {
+                    font-size: 1.125rem;
+                    color: var(--black-200);
+                    margin: 1.125rem 0;
+                }
+                .filter-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 1rem;
+                    grid-row-gap: 1rem;
+
+                }
+                &:last-of-type {
+                    border-bottom: unset;
+                    margin-bottom: unset;
+                    padding-bottom: unset;
+                }
+            }
+        }
+    }
+}

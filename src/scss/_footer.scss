@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'mixins';
+
+.site-footer {
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 2.625rem;
+        grid-column-gap: 2.624rem;
+        border-bottom: 1px solid var(--gray-100);
+        @include breakpoint-up('md') {
+            grid-template-columns: 300px repeat(1, 1fr);
+        }
+        @include breakpoint-up('xl') {
+            grid-template-columns: 400px auto auto auto;
+        }
+    }
+
+
+    .site-info {
+        display: flex;
+        justify-content: center;
+        letter-spacing: 0.88px;
+        margin: 1.625rem 0 1.25rem 0;
+    }
+}

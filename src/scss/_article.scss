@@ -1,0 +1,163 @@
+.article-card {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .article-thumbnail-wrap {
+        position: relative;
+        &::after {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            max-height: 230px;
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.4318102240896359) 0%,
+                rgba(0, 0, 0, 0.011642156862745057) 100%
+            );
+        }
+
+        .article-thumbnail {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            height: 230px;
+        }
+
+        .article-price {
+            position: absolute;
+            bottom: 0.625rem;
+            font-size: 17px;
+            font-weight: bold;
+            margin: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            z-index: 10;
+        }
+    }
+
+    .article-content {
+        margin: 1.5625rem 0.5625rem 0.5625rem;
+        @include breakpoint-up('md') {
+            margin: 1.5625rem;
+        }
+
+        .article-excerpt {
+            display: none;
+        }
+        .article-author-row {
+            padding: 15px 0;
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 0.9375rem;
+            align-items: center;
+            line-height: 1.3;
+            border-bottom: 1px solid var(--gray-100);
+            .avatar {
+                border-radius: 50%;
+            }
+
+            .article-author-name {
+                display: block;
+                font-size: 0.875rem;
+                color: var(--black-200);
+                font-weight: 600;
+                margin-bottom: 0.1875rem;
+            }
+
+            .article-listed-time {
+                display: block;
+                color: var(--gray-500);
+            }
+        }
+        .article-footer {
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .article-save, .simplefavorite-button {
+                font-weight: 600;
+                font-size: 0.9375rem;
+                cursor: pointer;
+                &.active {
+                    color: var(--red-500);
+                }
+            }
+            .article-btn-details {
+                font-size: 0.9375rem;
+                padding: 0.825rem 3.125rem;
+            }
+        }
+    }
+}
+
+.article-meta {
+    // border-bottom: 1px solid var(--gray-100);
+    padding-bottom: 15px;
+    .article-geo {
+        color: #f45757;
+        font-size: 0.875rem;
+        position: relative;
+        margin-bottom: 0.625rem;
+        margin-left: 0.9375rem;
+        text-align: left;
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: -1px;
+            font-size: 15px;
+        }
+    }
+    .article-tags {
+        .article-tag {
+            margin-right: 0.875rem;
+        }
+    }
+}
+
+.article-list {
+    @include breakpoint-up('md') {
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)) !important;
+    }
+    .article-card {
+        @include breakpoint-up('md') {
+            display: grid;
+            grid-template-columns: 220px auto;
+            align-items: center;
+        }
+        .article-thumbnail-wrap {
+            @include breakpoint-up('md') {
+                max-height: 160px;
+            }
+            .article-thumbnail {
+                @include breakpoint-up('md') {
+                    max-height: 160px;
+                }
+            }
+        }
+        .article-content {
+            .article-author-row {
+                display: none;
+            }
+            .article-excerpt {
+                font-size: 0.94rem;
+                line-height: 1.6875rem;
+                display: block;
+            }
+            .article-footer {
+                display: none;
+            }
+        }
+    }
+}

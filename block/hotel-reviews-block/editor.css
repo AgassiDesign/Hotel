@@ -1,0 +1,135 @@
+/**
+ * Note that these styles are loaded *after* common styles, so that
+ * editor-specific styles using the same selectors will take precedence.
+ */
+
+progress {
+    background: crimson;
+    vertical-align: baseline;
+}
+
+progress::-webkit-progress-value {
+    background: var(--red-500);
+}
+
+progress::-moz-progress-bar {
+    background: var(--blue-200);
+}
+
+progress::-webkit-progress-value {
+    background: var(--red-500);
+}
+
+progress::-webkit-progress-bar {
+    background: var(--blue-200);
+}
+
+.wp-block-hotel-reviews {
+  margin: 2.5rem 0;
+}
+
+.wp-block-hotel-reviews .reviews-list__title {
+  font-size: 1.125rem;
+  color: var(--black-200);
+}
+
+.wp-block-hotel-reviews .reviews-list {
+  box-shadow: 0px -20px 48px 0px rgba(0, 0, 0, 0.02);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.625rem;
+  list-style-type: none;
+  color: #1e2022;
+  white-space: pre-wrap;
+}
+
+@media (min-width: 768px) {
+  .wp-block-hotel-reviews .reviews-list {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.5625rem;
+  }
+}
+
+.wp-block-hotel-reviews .reviews-list .reviews-list__item {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .wp-block-hotel-reviews .reviews-list .reviews-list__item {
+    grid-column-gap: 0.25rem;
+  }
+}
+
+.wp-block-hotel-reviews .reviews-list .reviews-list__item .reviews-item {
+  color: var(--black-200);
+  letter-spacing: 0.49px;
+}
+
+.wp-block-hotel-reviews .reviews-list .reviews-list__item .reviews-progress__bar {
+  border: none;
+  width: 100px;
+  height: 5px;
+}
+
+@media (min-width: 768px) {
+  .wp-block-hotel-reviews .reviews-list .reviews-list__item .reviews-progress__bar {
+    width: 75px;
+  }
+}
+
+.wp-block-hotel-reviews .reviews-list .reviews-list__item .reviews-item__value .components-base-control__field {
+  height: 30px;
+  margin-bottom: 0;
+}
+
+.wp-block-hotel-reviews .reviews-area {
+  margin-top: 2.5rem;
+}
+
+.wp-block-hotel-reviews .reviews-area .reviews-post {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.wp-block-hotel-reviews .reviews-area .reviews-post .review {
+  padding-bottom: 1.375rem;
+  margin-bottom: 1.375rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+
+.wp-block-hotel-reviews .reviews-area .reviews-post .review .review-body .review-meta {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.wp-block-hotel-reviews .reviews-area .reviews-post .review .review-body .review-meta .review-avatar img {
+  border-radius: 50%;
+}
+
+.wp-block-hotel-reviews .reviews-area .reviews-post .review .review-body .review-meta .review-container {
+  margin-left: 1.25rem;
+  margin-top: 0.625rem;
+}
+
+.wp-block-hotel-reviews .reviews-area .reviews-post .review .review-body .review-meta .review-container .review-metadata .fn {
+  margin-bottom: 0.3125rem;
+}
+
+.wp-block-hotel-reviews .reviews-area .reviews-post .review .review-body .review-meta .review-container .review-metadata .fn a {
+  font-size: 0.875rem;
+  color: var(--black-200);
+}
+
+.wp-block-hotel-reviews .reviews-area .reviews-post .review .review-body .review-meta .review-container .review-content {
+  margin-top: 0.875rem;
+  font-size: 1.0625rem;
+  color: var(--gray-500);
+}
+
+

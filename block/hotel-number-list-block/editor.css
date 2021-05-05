@@ -1,0 +1,13 @@
+/**
+ * Note that these styles are loaded *after* common styles, so that
+ * editor-specific styles using the same selectors will take precedence.
+ */
+ .wp-block-hotel-number-list .number-list {
+     list-style-type: none;
+     color: #1E2022;
+     font-size: 18px;
+ }
+ .number-list li:nth-child(even) {
+    color: #77838F;
+    font-size: 17px;
+}

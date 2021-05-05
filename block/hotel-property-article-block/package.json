@@ -1,0 +1,27 @@
+{
+	"name": "gutenberg-property-article",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Gutenberg Property Article",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"editor",
+		"Examples"
+	],
+	"homepage": "https://github.com/WordPress/gutenberg-examples/",
+	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
+	"bugs": {
+		"url": "https://github.com/WordPress/gutenberg-examples/issues"
+	},
+	"devDependencies": {
+		"@wordpress/components": "^9.5.0",
+		"@wordpress/scripts": "^9.0.0"
+	},
+	"scripts": {
+		"build": "run build",
+		"watch": "wp-scripts start",
+		"packages-update": "wp-scripts packages-update"
+	}
+}

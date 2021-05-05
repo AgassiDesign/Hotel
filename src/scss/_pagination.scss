@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    .nav-links {
+        margin: 0 .25rem;
+        .page-numbers {
+            width: 36px;
+            height: 36px;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &.current {
+                background-color: var(--red-500);
+                color: white;
+                border-radius: 0.4rem;
+                cursor: unset;
+            }
+            &:hover:not(.current) {
+                background-color: var(--red-100);
+                color: white;
+                border-radius: 0.4rem;
+            }
+        }
+    }
+}

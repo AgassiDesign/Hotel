@@ -1,0 +1,62 @@
+.site-header {
+    box-shadow: 0px 2px 48px 0px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    z-index: 5;
+    position: relative;
+
+    .header-container {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        margin: auto;
+        padding: 1rem;
+
+        @include breakpoint-up('sm') {
+            width: initial;
+        }
+
+        @include breakpoint-up('md') {
+            grid-template-columns: max-content auto max-content;
+            order: 1;
+             padding: 1rem 0;
+        }
+
+        .site-branding {
+            display: flex;
+            align-items: center;
+            order: 1;
+
+            @include breakpoint-up('md') {
+                order: 1;
+            }
+
+            .site-title {
+                display: inline;
+            }
+        }
+
+        .site-nav {
+            grid-column: 1/-1;
+            order: 3;
+            overflow: auto;
+            @include breakpoint-up('md') {
+                grid-column: auto;
+                order: 2;
+                justify-self: end;
+                overflow: initial;
+                margin-right: 1.875rem;
+            }
+        }
+
+        .buy-now {
+            order: 2;
+            justify-self: end;
+
+            @include breakpoint-up('md') {
+                grid-column: auto;
+                order: 3;
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.site-nav {
+    padding: 0.75rem 0;
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        margin: 0;
+        padding-left: 0;
+
+        .menu-item {
+            a {
+                position: relative;
+                color: var(--gray-500);
+                font-size: 1rem;
+
+                @include breakpoint-up('md') {
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 0;
+                        height: 2px;
+                        background-color: #fff;
+                        transition: width 0.3s, height 0.3s, left 0.3s;
+                        position: absolute;
+                        left: 0;
+                        bottom: -8px;
+                    }
+                    &:hover::before {
+                        width: 100%;
+                        left: 0;
+                        background-color: var(--gray-500);
+                    }
+
+                    &::after {
+                        position: absolute;
+                        top: 0.425rem;
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                        content: '\f078';
+                        margin-left: 0.5rem;
+                        font-size: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-toggle {
+        border: none;
+        background-color: transparent;
+
+        .dropdown-icon {
+            display: flex;
+            align-items: center;
+            &.close {
+                display: none;
+            }
+        }
+
+        &[aria-expanded*='true'] .dropdown-icon.open {
+            display: none;
+        }
+
+        &[aria-expanded*='true'] .dropdown-icon.close {
+            animation-name: close-button-transition;
+            animation-duration: 0.3s;
+        }
+
+        &[aria-expanded*='true'] .dropdown-icon.close {
+            display: flex;
+        }
+    }
+}
+
+.widget {
+    .menu {
+        list-style-type: none;
+        padding: 0;
+        padding-left: 1.3rem;
+        .menu-item {
+            padding-left: 1.5rem;
+            letter-spacing: 0.47px;
+            padding: 0.375rem 0;
+            color: var(--gray-500);
+            &::before {
+                content: '\f105';
+                font-family: FontAwesome;
+                display: inline-block;
+                margin-left: -1.3rem;
+                width: 1.3rem;
+            }
+            &:hover::before {
+                content: '\f104';
+            }
+            .a {
+                &:hover {
+                    color: darken(map-get($theme-colors, 'gray-500'), 20%);
+                }
+            }
+        }
+    }
+}

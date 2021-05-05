@@ -1,0 +1,33 @@
+{
+	"name": "gutenberg-download",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Gutenberg Download Block",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"editor",
+		"Examples"
+	],
+	"homepage": "https://github.com/WordPress/gutenberg-examples/",
+	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
+	"bugs": {
+		"url": "https://github.com/WordPress/gutenberg-examples/issues"
+	},
+	"devDependencies": {
+		"@wordpress/components": "^9.5.0",
+		"@wordpress/scripts": "^9.0.0",
+		"concurrently": "^6.0.2",
+		"laravel-mix": "^4.0.13",
+		"sass": "^1.15.3",
+		"sass-loader": "^7.1.0"
+	},
+	"scripts": {
+		"dev": "concurrently --kill-others \"npm run watch\" \"npm run start-watch\"",
+		"start-watch": "wp-scripts start",
+		"development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "npm run development -- --watch"
+	},
+	"dependencies": {}
+}

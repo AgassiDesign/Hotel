@@ -1,0 +1,50 @@
+.wp-block-hotel-download {
+  text-align: center;
+  padding: 8.125rem 0;
+}
+
+.wp-block-hotel-download .property-download__title {
+  font-weight: normal;
+  color: #1e2022;
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+}
+
+.wp-block-hotel-download .property-download__description {
+  text-align: center;
+  font-size: 1.0625rem;
+  color: #77838f;
+  max-width: 460px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.wp-block-hotel-download .property-download-content .property-download__button {
+  min-width: 170px;
+  min-height: 54px;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  margin-right: 1rem;
+  background-color: #f45757;
+  color: white;
+  border-radius: 2rem;
+  border: unset;
+  display: inline-grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  text-align: center;
+  text-decoration: unset;
+}
+
+.wp-block-hotel-download .property-download-content .property-download__button span {
+  text-align: left;
+  line-height: 20px;
+}
+
+.wp-block-hotel-download .property-download-content .property-download__button span span {
+  font-size: 0.75rem;
+}
+
+.hotel-remove__btn {
+  margin-bottom: 1rem;
+}
+

@@ -1,0 +1,10 @@
+.wp-block-hotel-reserve-from .wpcf7-form .input__search-large {
+  padding: 1rem;
+}
+
+.wp-block-hotel-reserve-from .wpcf7-form .wpcf7-submit {
+  padding: 0.8rem 8rem;
+  font-size: 15px;
+  font-weight: 600;
+}
+

@@ -1,0 +1,38 @@
+.wp-block-hotel-amenities-list {
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: 1.875rem;
+    margin: 2.5rem 0;
+    .amenities-list__title {
+        font-size: 1.125rem;
+        color: var(--black-200);
+    }
+    .amenities-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 0.625rem;
+        list-style-type: none;
+        color: #1e2022;
+        @include breakpoint-down('sm') {
+           grid-template-columns: repeat(1, 1fr);
+        }
+        @include breakpoint-up('md') {
+           grid-template-columns: repeat(4, 1fr);
+        }
+        li {
+            letter-spacing: 0.49px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: -1.75em;
+                display: inline-block;
+                background-repeat: no-repeat;
+                top: 3px;
+                height: 0.9em;
+                width: 0.9em;
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' color='%23f45757'><path fill='currentColor' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'></path></svg>");
+            }
+        }
+    }
+}
